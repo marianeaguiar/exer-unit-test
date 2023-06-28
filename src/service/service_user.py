@@ -15,14 +15,13 @@ class ServiceUser:
         user = self.check_user_exists(name)
 
         if name != None and job != None:
-            #if type(name) == str:
-                if type(name) == str and type(job) == str:
-                    if name is not None and job is not None:
-                        user = User(name=name, job=job)
-                        self.store.bd.append(user)
-                    return "Usuário adicionado"
+            if type(name) == str and type(job) == str:
+                if name is not None and job is not None:
+                    user = User(name=name, job=job)
+                    self.store.bd.append(user)
+                return "Usuário adicionado"
 
-                return "Usuário não adicionado"
+            return "Usuário não adicionado"
 
         if name == user.name:
             return "Nome adicionado já existe"
